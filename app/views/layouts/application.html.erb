@@ -7,8 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <header>
+      <%= link_to image_tag("https://news.ycombinator.com/y18.gif"), "https://github.com/gechro/HackerNewsClone_onRails" %>
+      <strong><%= link_to 'Hacker News', root_path%></strong>
+      <%= link_to "new", newest_posts_path %> |
+      <%= link_to "comments", newest_comments_path %> |
+      <%= link_to "submit", new_post_path %>
+      <nav id="user_nav">
+        <% if @logged_in %>
+        <%= link_to @current_user.user_name, user_path(@current_user)%>
+        <%= link_to'Logout', logout_path, method: :delete %>
+        <% else %>
+        <%= link_to 'login', login_path%>
+        <%end%>
+      </nav>
+    </header>
+    <br>
+    some content in here
+    <br>
+    .
+    <%= yield %>
+    </div>
 </body>
 </html>
