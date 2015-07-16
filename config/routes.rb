@@ -16,11 +16,13 @@ Rails.application.routes.draw do
   get 'users/:id/posts' => 'users#submissions', as: :user_submissions
   get 'users/:id/comments' => 'users#comments', as: :user_comments
 
+  get 'posts/newest' => 'posts#newest', as: :newest_posts
+
   resources :posts do
     resources :comments
   end
 
-  get 'posts/newest' => 'posts#newest', as: :newest_posts
+
   get 'comments/newest' => 'comments#newest', as: :newest_comments
 
   root 'posts#index'

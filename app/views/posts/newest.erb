@@ -1,0 +1,6 @@
+<ol>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %><br><small><%=post.upvotes%> points by <%= post.user.username %> | <%= link_to "#{post.comments.count} comments", post_comments_path(post_id: post.id) %> </small></li>
+  <% end %>
+</ol>
+

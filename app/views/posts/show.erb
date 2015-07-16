@@ -1,0 +1,12 @@
+<br>
+<%= @post.title %>
+<br>
+<small><%=@post.upvotes%> points by <%= @post.user.username %> | <%= @post.comments.count %> comments </small>
+</br>
+<p> <%= @post.body%> </p>
+<br>
+
+<%= form_for [@post, @comment] do |f| %>
+  <%=f.text_area :body, :cols => 70, :rows => 7%><br>
+  <%=f.submit "add comment"%>
+<%end%>

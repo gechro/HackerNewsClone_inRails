@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :require_login, only: [:new,:edit,:destroy]
   def index
   end
 

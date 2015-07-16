@@ -1,0 +1,28 @@
+<table>
+  <tr>
+    <td class="left">user:</td>
+    <td class="right"><%= @user.username %></td>
+  </tr>
+  <tr>
+    <td class="left">created:</td>
+    <td class="right"><%= @user.created_at %></td>
+  </tr>
+  <tr>
+    <td class="left">karma:</td>
+    <td class="right"><%= @user.karma %></td>
+  </tr>
+  <tr>
+    <td class="left"></td>
+    <td class="right"><%= link_to "change password", edit_user_path(@user) %></td>
+  </tr>
+  <tr>
+    <td class="left"></td>
+    <td class="right"><%= link_to "submissions", user_submissions_path(@user) %></td>
+  </tr>
+  <tr>
+    <td class="left"></td>
+    <td class="right"><%= link_to "comments", user_comments_path(@user) %></td>
+  </tr>
+</table>
+
+
