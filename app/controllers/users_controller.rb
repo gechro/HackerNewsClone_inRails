@@ -24,13 +24,24 @@ class UsersController < ApplicationController
     @user_posts = @user.posts
   end
 
+  def submissions
+    @submissions = User.find_by(id: params[:id]).posts
+  end
+
+  def comments
+    @comments = User.find_by(id: params[:id]).comments
+  end
+
   def edit
+    #edit password
   end
 
   def update
+    #update attributes :password and :karma
   end
 
   def destroy
+    #delete account and log out
   end
 
   private

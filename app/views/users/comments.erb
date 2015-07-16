@@ -1,0 +1,9 @@
+<br>
+<% @comments.each do |comment| %>
+  <div>
+  <%= link_to comment.post.title, post_path(comment.post) %><br>
+  <small> on <%=comment.created_at%> (<%= comment.upvotes %> )</small><br>
+  <%= comment.body %>
+  </div>
+
+<% end %>

@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   end
 
   def newest
-    @posts = Post.all
+    @posts = Post.all.order("created_at desc")
     render :'posts/newest'
   end
 

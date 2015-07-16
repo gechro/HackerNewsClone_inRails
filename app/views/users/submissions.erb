@@ -1,0 +1,4 @@
+<br>
+<% @submissions.each do |sub| %>
+  <li><%= link_to sub.title, post_path(sub) %><br><small>submitted <%=sub.created_at%></small></li>
+<% end %>

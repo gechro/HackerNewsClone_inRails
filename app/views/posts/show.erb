@@ -10,3 +10,10 @@
   <%=f.text_area :body, :cols => 70, :rows => 7%><br>
   <%=f.submit "add comment"%>
 <%end%>
+
+<% @post.comments.each do |comment| %>
+ <div class="comments">
+  <small> by <%= link_to comment.commenter.username, user_path(comment.commenter) %> on <%=comment.created_at%></small>
+  <br><%= comment.body %>
+  </div>
+<% end %>

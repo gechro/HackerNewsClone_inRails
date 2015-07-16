@@ -1,0 +1,7 @@
+<br>
+<% @comments.each do |comment| %>
+ <div class="comments">
+  <small> by <%= link_to comment.commenter.username, user_path(comment.commenter) %> on <%=comment.created_at%></small>
+  <br><%= comment.body %>
+  </div>
+<% end %>
