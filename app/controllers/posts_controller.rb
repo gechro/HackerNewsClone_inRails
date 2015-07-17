@@ -31,9 +31,14 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find_by(id: params[:id])
   end
 
   def update
+    post = Post.find_by(id: params[:id])
+    post.update_attributes(post_params)
+    votes = PostVote.where(post_id: post.id, voted: true).count
+    post.update_attributes(upvotes: votes)
   end
 
   def destroy

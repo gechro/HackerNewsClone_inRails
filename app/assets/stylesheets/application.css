@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ .vote {
+  text-decoration: none;
+ }
  .comments {
   margin-left: 5px;
   margin-bottom: 10px;
